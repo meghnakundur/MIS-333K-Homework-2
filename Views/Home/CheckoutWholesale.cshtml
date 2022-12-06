@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout Wholesale Order</title>
+    <link href="/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <!--this is the main content section of the website -->
+    <div class="container">
+        <!--NOTE: This is where the code from the main view is inserted -->
+
+
+        <h1>Checkout Wholesale Order</h1>
+        <!-- handles exceptions -->
+        <h4 class="text-danger">@ViewBag.Error</h4>
+
+        <hr />
+        <div class="row">
+            <p class="text-danger"></p>
+            <div class="col-md-4">
+                <form method="get" action="/Home/WholesaleTotals">
+
+                    <div class="form-group">
+                        <label class="control-label" for="CustomerCode">Customer Code:</label>
+                        <input class="form-control" type="text" data-val="true" data-val-length="The customer code must be 4-6 characters." data-val-length-max="6" data-val-length-min="4" data-val-regex="Customer code may only contain letters" data-val-regex-pattern="^[a-zA-Z]&#x2B;$" data-val-required="Customer code is a required field." id="CustomerCode" maxlength="6" name="CustomerCode" value="" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="CustomerCode" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" data-val="true" data-val-required="The 'Is this customer a preferred customer?' field is required." id="PreferredCustomer" name="PreferredCustomer" value="true" /> Is this customer a preferred customer?
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="DeliveryFee">Delivery Fee:</label>
+                        <input class="form-control" type="text" data-val="true" data-val-number="The delivery fee must be a number." data-val-range="The delivery fee must be between 0 and 250." data-val-range-max="250" data-val-range-min="0" data-val-required="Delivery Fee is a required field." id="DeliveryFee" name="DeliveryFee" value="" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="DeliveryFee" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="NumberOfHardBacks">Number of Hardback Books:</label>
+                        <input class="form-control" type="number" data-val="true" data-val-range="The number of hardback books must be at least zero." data-val-range-max="10000" data-val-range-min="0" data-val-required="Number of hardbacks is a required field." id="NumberOfHardBacks" name="NumberOfHardBacks" value="" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="NumberOfHardBacks" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="NumberOfPaperBacks">Number of Paperback Books:</label>
+                        <input class="form-control" type="number" data-val="true" data-val-range="The number of paperback books must be at least zero" data-val-range-max="10000" data-val-range-min="0" data-val-required="Number of paperbacks is a required field." id="NumberOfPaperBacks" name="NumberOfPaperBacks" value="" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="NumberOfPaperBacks" data-valmsg-replace="true"></span>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-primary" />
+                        <a class="btn btn-success" href="/">Home</a>
+                    </div>
+                    <input name="PreferredCustomer" type="hidden" value="false" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--This code references different script libraries to make our page responsive -->
+    <script src="/lib/jquery/jquery.js"></script>
+    <script src="/lib/twitter-bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+</body>
+</html>

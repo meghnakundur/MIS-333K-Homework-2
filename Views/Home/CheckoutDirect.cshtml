@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Direct Customer</title>
+    <link href="/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!--this is the main content section of the website -->
+    <div class="container">
+        <!--NOTE: This is where the code from the main view is inserted -->
+
+
+        <h1>Direct Customer Checkout</h1>
+
+        <!-- handles exceptions -->
+        <h4 class="text-danger">@ViewBag.Error</h4>
+        <hr />
+        <div class="row">
+            <p class="text-danger"></p>
+            <div class="col-md-4">
+                <form method="get" action="/Home/DirectTotals">
+
+                    <div class="form-group">
+                        <label class="control-label" for="CustomerName">Customer Name:</label>
+                        <input class="form-control" type="text" id="CustomerName" name="CustomerName" value="" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="CustomerName" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="NumberOfHardBacks">Number of Hardback Books:</label>
+                        <input class="form-control" type="number" data-val="true" data-val-range="The number of hardback books must be at least zero." data-val-range-max="10000" data-val-range-min="0" data-val-required="Number of hardbacks is a required field." id="NumberOfHardBacks" name="NumberOfHardBacks" value="" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="NumberOfHardBacks" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="NumberOfPaperBacks">Number of Paperback Books:</label>
+                        <input class="form-control" type="number" data-val="true" data-val-range="The number of paperback books must be at least zero." data-val-range-max="10000" data-val-range-min="0" data-val-required="Number of paperbacks is a required field." id="NumberOfPaperBacks" name="NumberOfPaperBacks" value="" />
+                        <span class="text-danger field-validation-valid" data-valmsg-for="NumberOfPaperBacks" data-valmsg-replace="true"></span>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-primary" />
+                        <a class="btn btn-success" href="/">Home</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--This code references different script libraries to make our page responsive -->
+    <script src="/lib/jquery/jquery.js"></script>
+    <script src="/lib/twitter-bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+</body>
+</html>
+

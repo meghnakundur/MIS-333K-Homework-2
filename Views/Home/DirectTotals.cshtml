@@ -1,0 +1,97 @@
+﻿@model DirectOrder
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Direct Customer Totals</title>
+    <link href="/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!--this is the main content section of the website -->
+    <div class="container">
+        <!--NOTE: This is where the code from the main view is inserted -->
+
+
+        <h1>Direct Customer Totals</h1>
+
+        <div>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.CustomerName)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.CustomerName)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.CustomerType)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.CustomerType)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.NumberOfHardbacks)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.NumberOfHardbacks)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.NumberOfPaperbacks)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.NumberOfPaperbacks)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.TotalItems)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.TotalItems)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.HardbackSubtotal)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.HardbackSubtotal)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.PaperbackSubtotal)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.PaperbackSubtotal)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Subtotal)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Subtotal)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.SalesTax)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.SalesTax)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Total)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Total)
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a class="btn btn-primary" href="/">Home</a>
+        </div>
+
+    </div>
+
+    <!--This code references different script libraries to make our page responsive -->
+    <script src="/lib/jquery/jquery.js"></script>
+    <script src="/lib/twitter-bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+</body>
+</html>
